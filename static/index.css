@@ -1,5 +1,6 @@
 body{
     background: #040429;
+    font-size: 1vw;
 }
 .container{
     background-color: rgb(19, 39, 39);
@@ -45,6 +46,10 @@ body{
 
     position: relative;
     top: -0.8vw;
+    font-size: 1vw;
+     width: 5vw;
+     height: 2.5vw;
+     padding: 0.2vw;
     /* margin-top: 1vw; */
 
 }

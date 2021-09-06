@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AkChatRoom</title>
+    <title>Walkie Talkies</title>
+    <link rel="shortcut icon" type="image/jpg" href="Walkie_Talkies.png"/>
+
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/" style="color:aqua;">AkChatRoom</a>
+        
+        <div class="container-fluid" style="display: flex; flex-direction: row; justify-content: flex-start;">
+            <img style="width: 3vw; height: 3vw; display: inline-block;"  type="image/png" src="Walkie_Talkies.png"/>
+          <a class="navbar-brand" href="/" style="color:rgb(30, 161, 212); display: inline-block; margin-left: 3vw;"><bold style="font-size: 1.5vw;">Walkie Talkies</bold></a>
         </div>
     </nav>
 
@@ -20,7 +25,7 @@
         <div class="accordion-item joined">
           <h2 class="accordion-header " id="headingOne" >
             <button class="accordion-button joinedList" style="background-color: black; color: aqua;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Server List.
+              <span style="font-size: 1.3vw;"> Server List </span>
             </button>
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -45,7 +50,7 @@
             
         </div>
         <textarea name="" id="" cols="30" rows="10" class="chatBox"></textarea>
-        <button type="button" class="btn btn-success sendBtn mx-4">Send</button>
+        <button type="button" class="btn btn-success sendBtn" >Send</button>
     </div>
       
 
