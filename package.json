@@ -1,0 +1,28 @@
+{
+  "name": "akchatroom",
+  "version": "1.0.0",
+  "description": "This is a chat room web app based on socket.io",
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "socket.io": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anshkaushik05/AkChatRoom.git"
+  },
+  "author": "Ansh Kaushik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anshkaushik05/AkChatRoom/issues"
+  },
+  "homepage": "https://github.com/anshkaushik05/AkChatRoom#readme"
+}
