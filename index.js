@@ -28,12 +28,21 @@ app.get('/',(req,res)=>{//request,response
 // Sockets
 io.on('connection',(socket)=>{//listen on the connection event for incoming sockets
     // console.log("Some User's Web Socket connection established");
-    
-    socket.on('message',()=>console.log("message recieved"));
-    var  name='ansh';
-    socket.broadcast.emit('Good',name);
-    socket.on('disconnect',()=>{
-        console.log("Someone Disconnected");
+    var users={};
+    socket.on('UserConnected',name=>{//recieved event when someone joinned
+        users[socket.id] = name;//map name according to id's for record
+        socket.broadcast.emit('SomebodyJoined',name);// emitting event to others
+        // console.log(name);
+    })
+
+    socket.on('message',msg=>{//when someone types a msg, this event is emitted
+        socket.broadcast.emit('msgSent',{msg: msg,name : users[socket.id]});// emitting event to others
+        // console.log(msg);
+    })
+    socket.on('disconnect',()=>{//event when some one disconnect or reload the page
+        socket.broadcast.emit('disconnected',users[socket.id]);// emitting event to others
+        delete users[socket.id];//deleting records of user
+        // console.log("Someone Disconnected");
     })
 })
 
