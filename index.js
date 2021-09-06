@@ -27,8 +27,8 @@ app.get('/',(req,res)=>{//request,response
 
 // Sockets
 io.on('connection',(socket)=>{//listen on the connection event for incoming sockets
-    console.log("User Web Socket connection established");
-
+    // console.log("Some User's Web Socket connection established");
+    
     socket.on('message',()=>console.log("message recieved"));
     var  name='ansh';
     socket.broadcast.emit('Good',name);
