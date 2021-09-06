@@ -85,3 +85,27 @@ body{
     align-self: flex-start;
 
 }
+
+.Name{
+    position: absolute;
+    left: 83vw;
+    top: 10vw;
+}
+.Name textarea{
+    height: 2vw;
+    resize: none;
+    background-color: black;
+    color: aqua;
+    border-radius: 0.5vw;
+    text-align: center;
+    border: solid 0.1vw gold;
+}
+.nameBtn{
+    position: relative;
+    left: 5vw;
+    height: 2.2vw;
+    font-size: 1vw;
+    margin-top: 1vw;
+    /* padding: 1vw; */
+
+}
