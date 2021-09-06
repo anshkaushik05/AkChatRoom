@@ -19,15 +19,27 @@ app.use(express.urlencoded({ extended: true }));
 const {Server}=require('socket.io');//imported socket.io to use web sockets in creation of realtime responses
 const io = new Server(server);//Craeted new instance of socket.io to listen events 
 
-app.get('/',(req,res)=>{
-    res.render('index.ejs');
+
+//GET POST Requests
+app.get('/',(req,res)=>{//request,response
+    res.render('index.ejs');//render this for above get request
 })
 
+// Sockets
 io.on('connection',(socket)=>{//listen on the connection event for incoming sockets
-    console.log("web socket connection established");
+    console.log("User Web Socket connection established");
+
+    socket.on('message',()=>console.log("message recieved"));
+    var  name='ansh';
+    socket.broadcast.emit('Good',name);
+    socket.on('disconnect',()=>{
+        console.log("Someone Disconnected");
+    })
 })
 
+
+// Listen 
 const port=3000;
-server.listen(port, () => {
+server.listen(port, () => {//to host a website
     console.log(`Hosted at http://localhost:${port}/`);
   });
