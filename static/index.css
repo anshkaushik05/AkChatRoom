@@ -1,0 +1,111 @@
+body{
+    background: #040429;
+    font-size: 1vw;
+}
+.container{
+    background-color: rgb(19, 39, 39);
+    border-radius: 2vw;
+    width: 60vw;
+    height: 40vw;
+}
+.joined{
+    width: 17vw;
+    position:absolute;
+    /* z-index: 2; */
+    background-color: black;
+    color: white;
+    border-radius: 1vw;
+}
+.joinedList{
+    height: 1.5vw;
+    background: black;
+    border-radius: 1vw;
+}
+.joinedName{
+    font-size: 0.8vw;
+    max-height: 38vw;
+    border : 0.05vw solid rgb(175, 170, 140);
+    border-radius: 1vw;
+}
+.chatBox{
+    height: 2.5vw;
+    width: 45vw;
+    border-radius: 2vw;
+    position: relative;
+    /* top: 37vw; */
+    margin-top: 2vw;
+    margin-left: 3vw;
+    background: black;
+    color: white;
+    padding: 0.3vw 1.5vw;
+    resize: none;
+    border: rgb(175, 170, 140) solid 0.05vw;
+    display: inline-block;
+}
+.sendBtn{
+
+    position: relative;
+    top: -0.8vw;
+    font-size: 1vw;
+     width: 5vw;
+     height: 2.5vw;
+     padding: 0.2vw;
+    /* margin-top: 1vw; */
+
+}
+.msg{
+    box-sizing: content-box;
+    /* min-height: 2.7vw; */
+    min-width: 8vw;
+    max-width: 25vw;
+    color: white;
+    background-color: #040429;
+    display: inline-block;
+    padding: 0vw 0.2vw;
+    border-radius: 0.5vw;
+    margin: 1vw 3.5vw 0vw 2vw;
+}
+.nameMsg{
+    font-size: 0.8vw;
+    color: aqua;
+}
+
+.allmsg{
+    height: 35vw;
+    width: 60vw;
+    margin-top: 3vw;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+.posLeft{
+    align-self: flex-end;
+}
+.posRight{
+    align-self: flex-start;
+
+}
+
+.Name{
+    position: absolute;
+    left: 83vw;
+    top: 10vw;
+}
+.Name textarea{
+    height: 2vw;
+    resize: none;
+    background-color: black;
+    color: aqua;
+    border-radius: 0.5vw;
+    text-align: center;
+    border: solid 0.1vw gold;
+}
+.nameBtn{
+    position: relative;
+    left: 5vw;
+    height: 2.2vw;
+    font-size: 1vw;
+    margin-top: 1vw;
+    /* padding: 1vw; */
+
+}

@@ -19,15 +19,36 @@ app.use(express.urlencoded({ extended: true }));
 const {Server}=require('socket.io');//imported socket.io to use web sockets in creation of realtime responses
 const io = new Server(server);//Craeted new instance of socket.io to listen events 
 
-app.get('/',(req,res)=>{
-    res.render('index.ejs');
+
+//GET POST Requests
+app.get('/',(req,res)=>{//request,response
+    res.render('index.ejs');//render this for above get request
 })
 
+// Sockets
 io.on('connection',(socket)=>{//listen on the connection event for incoming sockets
-    console.log("web socket connection established");
+    // console.log("Some User's Web Socket connection established");
+    var users={};
+    socket.on('UserConnected',name=>{//recieved event when someone joinned
+        users[socket.id] = name;//map name according to id's for record
+        socket.broadcast.emit('SomebodyJoined',name);// emitting event to others
+        // console.log(name);
+    })
+
+    socket.on('message',msg=>{//when someone types a msg, this event is emitted
+        socket.broadcast.emit('msgSent',{msg: msg,name : users[socket.id]});// emitting event to others
+        // console.log(msg);
+    })
+    socket.on('disconnect',()=>{//event when some one disconnect or reload the page
+        socket.broadcast.emit('disconnected',users[socket.id]);// emitting event to others
+        delete users[socket.id];//deleting records of user
+        // console.log("Someone Disconnected");
+    })
 })
 
+
+// Listen 
 const port=3000;
-server.listen(port, () => {
+server.listen(port, () => {//to host a website
     console.log(`Hosted at http://localhost:${port}/`);
   });
